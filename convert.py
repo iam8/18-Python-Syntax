@@ -19,26 +19,21 @@ def convert_temp(unit_in, unit_out, temp):
       convert_temp("f", "c", 212) => 100.0
     """
 
-    valid_units = ("C", "F")
-    in_upper = unit_in.upper()
-    out_upper = unit_out.upper()
+    valid_units = ("C", "F", "c", "f")
 
-    if in_upper not in valid_units:
+    if unit_in not in valid_units:
         return f"Invalid unit '{unit_in}'"
 
-    if out_upper not in valid_units:
+    if unit_out not in valid_units:
         return f"Invalid unit '{unit_out}'"
 
-    if in_upper == out_upper:
-        return temp
+    if unit_in.upper() == "C" and unit_out.upper() == "F":
+        temp = temp * 1.8 + 32
 
-    if in_upper== "C":
-        return temp * 1.8 + 32
+    if unit_in.upper() == "F" and unit_out.upper() == "C":
+        temp = (temp - 32) / 1.8
 
-    if in_upper == "F":
-        return (temp - 32) / 1.8
-
-    return None
+    return temp
 
 
 print("c", "f", 0, convert_temp("c", "f", 0), "should be 32.0")
