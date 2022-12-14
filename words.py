@@ -28,7 +28,7 @@ def print_starts_with_e(words):
             print(word.upper())
 
 
-def print_starts_with_letter(words, letters):
+def print_starts_with_letter(words, chars):
     """
     Given a list of words and a set of characters, print each word in the list if it starts with
     any of the characters in the set.
@@ -36,13 +36,8 @@ def print_starts_with_letter(words, letters):
     Case insensitive.
     """
 
-    letters_lower = {letter.lower() for letter in letters}
-
     for word in words:
-        try:
-            first_char = word[0]
-        except IndexError:
-            continue
-
-        if first_char.lower() in letters_lower:
-            print(word.upper())
+        for char in chars:
+            if word.startswith(char.lower()) or word.startswith(char.upper()):
+                print(word.upper())
+                break
