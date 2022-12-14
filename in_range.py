@@ -1,3 +1,7 @@
+# Ioana A Mititean
+# 12/13/22
+# Unit 18: Python Syntax Exercise
+
 def in_range(nums, lowest, highest):
     """Print numbers inside range.
 
@@ -16,6 +20,9 @@ def in_range(nums, lowest, highest):
     """
 
     # YOUR CODE HERE
+    for num in nums:
+        if lowest <= num <= highest:
+            print(num, "fits")
 
 
-in_range([10, 20, 30, 40, 50], 15, 30)            
+in_range([10, 20, 30, 40, 50], 15, 30)

@@ -1,17 +1,25 @@
+# Ioana A Mititean
+# 12/13/22
+# Unit 18: Python Syntax Exercise
+
 def sum_nums(nums):
     """Given list of numbers, return sum of those numbers.
 
     For example:
-      sum_nums([1, 2, 3, 4])
+        sum_nums([1, 2, 3, 4])
 
     Should return (not print):
-      10
-    """  
+        10
+    """
 
     # Python has a built-in function `sum()` for this, but we don't
     # want you to use it. Please write this by hand.
 
-    # YOUR CODE HERE
+    count = 0
+    for num in nums:
+        count += num
+
+    return count
 
 
 print("sum_nums returned", sum_nums([1, 2, 3, 4]))
